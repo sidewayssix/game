@@ -6,62 +6,43 @@ public class Game {
 
     public static void main(String[] args) {
 
-        int waitTime;
-        int weaponValue = 5;
-        double damage = 0;
-
-        //create scanner to read user input
         Scanner input = new Scanner(System.in);
+        int weaponValue = 0;
+        int shieldValue = 0;
 
         System.out.println("Welcome Hero, to the city of Astavar, what is your name?");
         String playerName = input.next();
 
-        waitTime = 2000;
         System.out.println("\nWelcome " + playerName + " Your adventure awaits!\n");
-
-        Wait(waitTime);
 
         System.out.println("You awaken to loud pounding on your door. "
                 + playerName + " Wake up!\n" + "You start to come to as the pounding continues.\n" +
                 "\"Who could it be at this hour?\" you say to yourself.\n\"Get up " + playerName +
                 " the town is under attack and it's already 3pm!!!\"");
 
-        damage = Combat(weaponValue);
-        // double damage = Math.random() * 6;
-        System.out.printf("damage: %.0f%n", damage);
+        System.out.println("You start getting out of bed.\n" + "\"Who the hell is attacking at 3 pm on a Wednesday?\"\n" +
+                "You yell as you slide your pants on, and grab your boots.\n" +
+                "After you slide into your boots, you grab the old sword and shield off the wall and reach the door.\n" +
+                "Attack and Defense increased by 5");
+        weaponValue = 5; shieldValue = 5;
 
-       /* try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println("After equiping your sword and shield you head for the door just as the pounding starts up again.\n" +
+                "\"We're all gonna die if you don't get your ass out here soon.\"" + "You hear from the other side of the door.");
 
-        double value = Math.random() * 6;
-        System.out.printf("stuff %.2f%n", value);  */
-    }
+        System.out.println("you grab a few rocks off the floor and two potions off the table just before you reach the door\n" +
+                "\"Best to be prepared\"" + "You say to yourself.");
+        Items.setPotions(2); Items.setRocks(5);
 
-    private static void Wait(int waitTime) {
+        System.out.println("You grab the door handle and just as your about to pull it open, you feel it push against you,\n" +
+                "and your neighbor Gwen falls through the open door into your living room.\n" +
+                "\"It's about damn time you got ready, now will you kill that thing\"");
 
-        try {
-            Thread.sleep(waitTime);
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+        System.out.println("You look through the now open door and see a Goblin with a small knife standing there\n" +
+                "\"All right, All right\"" + "You say as you charge towards the Goblin.\n");
 
-    private static double Combat(int weaponValue) {
+        System.out.println("\n" + "  \"Beginning Combat\"");
+        Combat.getDamage(weaponValue, shieldValue);
 
-        double damage = 0;
-        double value = Math.random() * 6;
-
-        if (value == 0) {
-            damage = 0;
-        } else if (value >= 1 || value <= 4) {
-            damage = weaponValue;
-        } else {
-            damage = weaponValue * 1.5;
-        }
-
-        return damage;
+        System.out.printf("%d %d %d",weaponValue, shieldValue, Combat.getDamage(weaponValue, shieldValue));
     }
 }
