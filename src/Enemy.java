@@ -1,12 +1,19 @@
 public class Enemy {
+
+    private String name;
     private int hp;
     private int att;
     private int def;
 
-    public Enemy(int hp, int att, int def) {
+    public Enemy(String name, int hp, int att, int def) {
+        this.name = name;
         this.hp = hp;
         this.att = att;
         this.def = def;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getHp() {
@@ -17,19 +24,23 @@ public class Enemy {
         return att;
     }
 
-    public void setAtt(int att) {
-        this.att = att;
-    }
-
     public int getDef() {
         return def;
     }
 
-    public void setDef(int def) {
-        this.def = def;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public void setAtt(int att) {
+        this.att = att;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
     }
 }

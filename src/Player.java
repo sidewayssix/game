@@ -1,4 +1,5 @@
 public class Player {
+
     private final int maxHp;
     private int hp;
 

@@ -1,9 +1,12 @@
 public class Items {
 
+    private Player player1;
+    private Enemy enemy;
     private int rocks;
     private int potions;
 
-    public Items(int rocks, int potions) {
+    public Items(Player player1, int rocks, int potions) {
+        this.player1 = player1;
         this.rocks = rocks;
         this.potions = potions;
     }
@@ -24,17 +27,17 @@ public class Items {
         this.potions = potions;
     }
 
-    public void potion(int potions){
+    public void usePotion(){
         if (potions > 0) {
             potions--;
-            Player.setHp() = Player.getMaxHp();
+            player1.setHp(player1.getMaxHp());
         }
     }
 
-    public void rock(int rocks) {
+    public void useRock() {
         if (rocks > 0) {
             rocks--;
-            Enemy.getHp() - 50;
+            enemy.setHp(-50);
         }
     }
 }
