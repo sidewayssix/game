@@ -14,7 +14,6 @@ public class Combat {
     public void combat(int weaponValue, int shieldValue) {
 
         Scanner input = new Scanner(System.in);
-        boolean win = false;
         double value = Math.random() * 6;
         int damage = 0;
         int damageDealt = 0;
@@ -25,18 +24,19 @@ public class Combat {
         System.out.println("-Use Potion-");
 
         while (true) {
-            if (enemy.getHp() <= 0) {// enemy is dead
-                win = true;
+            if (enemy.getHp() <= 0) {
+                System.out.println("You've won the Battle!");
                 break;
             }
 
-            if (player.getHp() <= 0) {// player is dead
-                win = false;
+            if (player.getHp() <= 0) {
+                System.out.println("You lost the battle, Game Over");
                 break;
             }
 
             System.out.println("What do you do?");
-            if (input.equals("Attack")) {
+            String userCommand = input.nextLine();
+            if (userCommand.equals("Attack")) {
                 if (value == 0) {
                     damage = 0;
                 } else if (value >= 1 || value <= 4) {
@@ -47,12 +47,16 @@ public class Combat {
 
                 enemy.setHp(weaponValue - enemy.getDef());
             }
-            if (input.equals("Throw Rock")) {
+            
+            if (userCommand.equals("Throw Rock")) {
                 item.useRock();
-                }
             }
-            if (input.equals("Use Potion")) {
+            
+            if (userCommand.equals("Use Potion")) {
                 item.usePotion();
+            }
+            else {
+                
             }
         }
     }
