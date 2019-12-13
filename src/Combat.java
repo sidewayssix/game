@@ -24,6 +24,7 @@ public class Combat {
         System.out.println("-Use Potion-");
 
         while (true) {
+	//Since we check for Enemy HP first, should both player and enemy both die, the fight will count as a win.
             if (enemy.getHp() <= 0) {
                 System.out.println("You've won the Battle!");
                 player.setHp(player.getMaxHp);
