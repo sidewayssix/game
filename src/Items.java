@@ -30,6 +30,7 @@ public class Items {
     public void usePotion(){
         if (potions > 0) {
             potions--;
+            System.out.println("You use a Potion, restoring yourself to full Health.");
             player1.setHp(player1.getMaxHp());
         }
     }
@@ -37,6 +38,7 @@ public class Items {
     public void useRock() {
         if (rocks > 0) {
             rocks--;
+            System.out.println("You throw a rock really really hard at the enemy, dealing 50 Damage.");
             enemy.setHp(-50);
         }
     }
