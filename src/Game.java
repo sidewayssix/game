@@ -15,7 +15,7 @@ public class Game {
         int shieldValue = 0;
 
         System.out.println("Welcome Hero, to the city of Astavar, what is your name?");
-        String playerName = input.next();
+        String playerName = input.nextLine();
 
         System.out.println("\nWelcome " + playerName + " Your adventure awaits!\n");
 
@@ -64,5 +64,32 @@ public class Game {
 
         System.out.println("\n" + "  \"Beginning Combat\"");
         combat.combat(weaponValue, shieldValue);
+        
+        System.out.println("After defeating the Goblin, you look down and notice the sword he has is better than yours.");
+        System.out.println("Pick up Sword? (-Yes- or -No-)");
+        
+        String.userInput = input.nextLine();
+        boolean validInput = false;
+        
+        while (!validInput)
+        if (userInput.equalsIgnoreCase("Yes") {
+            weaponValue = 15;
+            System.out.println("Attack increased to 15");
+            validInput = true;
+        }
+        //don't need to change anything if "No" is typed
+        if (userInput.equalsIgnoreCase("No") {
+            validInput = true;
+        }
+            
+        System.out.println("You look up to see that the rest of the Goblins have started to run away.\n" + 
+                           "\"I guess I just scared them off, well seems my work here is done, think I'll go Finish that nap!\"\n" + 
+                            "you say to no one in particular as you step back into your house and close the door.");    
+        
+        System.out.println("Press \"Enter\" to continue");
+        input.nextLine();
+                           
+        System.out.println("You've beaten the current content of this Game, I hope you enjoyed the short\n" + 
+                           "experience, and i hope to continue to build on this");
     }
 }
