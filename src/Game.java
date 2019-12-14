@@ -1,4 +1,12 @@
-// This will be a text based game that tells a simple story. It will include decision making, and basic combat.
+/* Jacob Wilson, Semester Project
+
+This will be a text based game that tells a simple story. It will include decision making, and basic combat.
+
+The main thing that I didn't get around to adding was more than 1 enemy, I honestly wasn't sure how exactly to do this, I know I needed to create a
+    second enemy object, but i wasn't sure how to go about making all the functions that controlled enemies
+    trigger for both the enemies.
+
+*/
 
 import java.util.Scanner;
 
@@ -6,9 +14,9 @@ public class Game {
 
     public static void main(String[] args) {
         Player player1 = new Player(100, 100);
-        Enemy goblin = new Enemy("goblin",40, 5, 5);
-        Items item = new Items(player1,0, 0);
-        Combat combat = new Combat(player1);
+        Enemy enemy1 = new Enemy("Goblin",50, 5, 5);
+        Items item = new Items(player1, enemy1, 0, 0);
+        Combat combat = new Combat(player1, enemy1, item);
 
         Scanner input = new Scanner(System.in);
         int weaponValue = 0;
@@ -37,14 +45,14 @@ public class Game {
         input.nextLine();
 
         System.out.println("After equiping your sword and shield you head for the door just as the pounding starts up again.\n" +
-                "\"We're all gonna die if you don't get your ass out here soon.\"" + "You hear from the other side of the door.");
+                "\"We're all gonna die if you don't get your ass out here soon.\"" + " You hear from the other side of the door.");
 
         System.out.println("Press \"Enter\" to continue");
         input.nextLine();
 
-        System.out.println("you grab a few rocks off the floor and two potions off the table just before you reach the door\n" +
-                "\"Best to be prepared\"" + "You say to yourself.");
-        item.setPotions(2); item.setRocks(5);
+        System.out.println("You grab a few rocks off the floor and two potions off the table just before you reach the door\n" +
+                "\"Best to be prepared\"" + " You say to yourself.\n" + "Potion +2, Rock +5");
+        item.setPotions(2); item.setRocks(0);
 
         System.out.println("Press \"Enter\" to continue");
         input.nextLine();
@@ -68,17 +76,17 @@ public class Game {
         System.out.println("After defeating the Goblin, you look down and notice the sword he has is better than yours.");
         System.out.println("Pick up Sword? (-Yes- or -No-)");
         
-        String.userInput = input.nextLine();
+        String userInput = input.nextLine();
         boolean validInput = false;
         
         while (!validInput)
-        if (userInput.equalsIgnoreCase("Yes") {
+        if (userInput.equalsIgnoreCase("Yes")) {
             weaponValue = 15;
             System.out.println("Attack increased to 15");
             validInput = true;
         }
         //don't need to change anything if "No" is typed
-        if (userInput.equalsIgnoreCase("No") {
+        if (userInput.equalsIgnoreCase("No")) {
             validInput = true;
         }
             
